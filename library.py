@@ -1,3 +1,42 @@
+# Optional Parameters
+
+class help(object):
+    class sLib(object):
+        def func(word="", add=0, freq=1):
+            print(word * (freq + add))
+
+    sLib.func("commands:")
+    sLib.func("         Lib.Dog.num_dogs()")
+    sLib.func("          print(Lib.Dog.bark)")
+    sLib.func("         test = library.NotPrivate(name)")
+    sLib.func("         test._display()")
+    sLib.func("         test.display()")
+    sLib.func("         test.priv()")
+    sLib.func("         name1 = library.sLib.func(word, add, freq)")
+    sLib.func("         name = library.Point(number, number)")
+    sLib.func("         name2 = library.Point(number, number)")
+    sLib.func("         print(name>name2)")
+    sLib.func("         print(name<=name2)")
+    sLib.func("         print(name>=name2)")
+    sLib.func("         print(name==name2)")
+    sLib.func("         print(name+name2)")
+    sLib.func("         print(name-name2)")
+    sLib.func("         print(name*name2)")
+    sLib.func("         dog = library.Dog(name, age)")
+    sLib.func("         dog.speak()")
+    sLib.func("         dog.talk()")
+    sLib.func("         cat = library.Cat(name, age, color)")
+    sLib.func("         cat.speak()")
+    sLib.func("         cat.talk()")
+    sLib.func("         lion = library.Lion(name, age)")
+    sLib.func("         lion.speak()")
+    sLib.func("         lion.talk()")
+    sLib.func("         snake = library.tiger(name, age)")
+    sLib.func("         snake.speak()")
+    sLib.func("         snake.talk()")
+    print("running on background:")
+
+
 class Dog(object):
 
     def add_weight(self, weight):
@@ -48,9 +87,6 @@ class Lion(object):
     def speak(self):
         print("Hi i am", self.name, "and i am", self.age, "years old and i am a Lion i will eat every animal")
 
-    def add_weight(self, weight):
-        self.weight = weight
-
     def talk(self):
         print("Bark!")
 
@@ -67,9 +103,6 @@ class snake(object):
     def speak(self):
         print("sss Hi i am", self.name, "and i am", self.age, "years old and i am a snake")
 
-    def add_weight(self, weight):
-        self.weight = weight
-
     def talk(self):
         print("ssssssss!")
 
@@ -84,9 +117,6 @@ class tiger(Dog):
 
     def speak(self):
         print("Hi i am", self.name, "and i am", self.age, "years old and i am a tiger and i will also eat every animal")
-
-    def add_weight(self, weight):
-        self.weight = weight
 
 
 class Point(object):
@@ -130,7 +160,25 @@ class Point(object):
     def __str__(self):
         return "Point(x=" + str(self.x) + "," + "y=" + str(self.y) + ")"
 
-class lib(object):
+
+class _Private:
+    def __init__(self, name):
+        self.name = name
+
+
+class NotPrivate:
+    def __init__(self, name):
+        self.name = name
+        self.priv = _Private(name)
+
+    def _display(self):
+        print("hello")
+
+    def display(self):
+        print("hi")
+
+
+class Lib(object):
     class Dog:
         dogs = []
 
@@ -147,4 +195,23 @@ class lib(object):
             """barks n times"""
             for _ in range(n):
                 print("Bark!")
-    Dog = Dog("dog")
+
+
+class car(object):
+    def __init__(self, make, model, year, condition, kms):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.condition = condition
+        self.kms = kms
+
+    def display(self, showAll):
+        if showAll:
+            print("this car %s %s from %s, it is  %s and has %s ths." % (
+            self.make, self.model, self.year, self.condition, self.kms))
+        else:
+            print("this car is a %s %s from %s." % (self.make, self.model, self.year))
+
+
+whip = car("fsjhfs", "adafd", 5353, "ndjsagy", 0)
+whip.display(True)
