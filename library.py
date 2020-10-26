@@ -1,50 +1,162 @@
-# Optional Parameters
+# Static and Class Methods
 
-class help(object):
-    class sLib(object):
-        def func(word="", add=0, freq=1):
-            print(word * (freq + add))
+def message():
+    print("not use this command dog.li")
 
-    sLib.func("commands:")
-    sLib.func("         Lib.Dog.num_dogs()")
-    sLib.func("          print(Lib.Dog.bark)")
-    sLib.func("         test = library.NotPrivate(name)")
-    sLib.func("         test._display()")
-    sLib.func("         test.display()")
-    sLib.func("         test.priv()")
-    sLib.func("         name1 = library.sLib.func(word, add, freq)")
-    sLib.func("         name = library.Point(number, number)")
-    sLib.func("         name2 = library.Point(number, number)")
-    sLib.func("         print(name>name2)")
-    sLib.func("         print(name<=name2)")
-    sLib.func("         print(name>=name2)")
-    sLib.func("         print(name==name2)")
-    sLib.func("         print(name+name2)")
-    sLib.func("         print(name-name2)")
-    sLib.func("         print(name*name2)")
-    sLib.func("         dog = library.Dog(name, age)")
-    sLib.func("         dog.speak()")
-    sLib.func("         dog.talk()")
-    sLib.func("         cat = library.Cat(name, age, color)")
-    sLib.func("         cat.speak()")
-    sLib.func("         cat.talk()")
-    sLib.func("         lion = library.Lion(name, age)")
-    sLib.func("         lion.speak()")
-    sLib.func("         lion.talk()")
-    sLib.func("         snake = library.tiger(name, age)")
-    sLib.func("         snake.speak()")
-    sLib.func("         snake.talk()")
-    print("running on background:")
+    print("not use this command tiger.li")
 
+    print("not use this command snake.li")
 
-class Dog(object):
+    print("not use this command Lion.li")
 
-    def add_weight(self, weight):
-        self.weight = weight
+class person(object):
+
+    population = "colling.."
+
+    storage = [12, frozenset, float, staticmethod, complex, classmethod, staticmethod, dict, object, slice, copyright, super, tuple, enumerate]
 
     def __init__(self, name, age):
         self.name = name
         self.age = age
+
+    @classmethod
+    def execute_storage(cls):
+         return cls.storage
+
+    @classmethod
+    def getPopulation(cls):
+        return cls.population
+
+    @staticmethod
+    def isAdult(age):
+        return age >= 18
+
+    @staticmethod
+    def isman(age):
+        return age >= 40
+
+    @staticmethod
+    def isChild(age):
+        return age <= 10
+
+    def display(self):
+        print(self.name, 'is ',  self.age, 'year old')
+
+
+class car(object):
+    def __init__(self, make, model, year, condition="New", kms=0):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.condition = condition
+        self.kms = kms
+
+    def display(self, showAll=True):
+        if showAll:
+            print("this car %s %s from %s, it is %s and has %s kms." % (self.make, self.model, self.year, self.condition, self.kms))
+        else:
+            print("this car is a %s %s from %s." % (self.make, self.model, self.year))
+
+
+
+class sLib(object):
+    def func(word="", add=0, freq=1):
+        print(word * (freq + add))
+
+
+
+def help():
+
+    print("commands:")
+
+    print("         Dog = library.Lib.dog(name)")
+
+    print("         Dog.num_dogs()")
+
+    print("         Dog.bark(number of times it should say bark)")
+
+    print("         print(Lib.Dog.bark)")
+
+    print("         test = library.NotPrivate(name)")
+
+    print("         test._display()")
+
+    print("         test.display()")
+
+    print("         test.priv()")
+
+    print("         name1 = library.sLib.func(word, add, freq)")
+
+    print("         name = library.Point(number, number)")
+
+    print("         name2 = library.Point(number, number)")
+
+    print("         print(name>name2)")
+
+    print("         print(name<=name2)")
+
+    print("         print(name>=name2)")
+
+    print("         print(name==name2)")
+
+    print("         print(name+name2)")
+
+    print("         print(name-name2)")
+
+    print("         print(name*name2)")
+
+    print("         dog = library.Dog(name, age)")
+
+    print("         dog.speak()")
+
+    print("         dog.talk()")
+
+    print("         cat = library.Cat(name, age, color)")
+
+    print("         cat.speak()")
+
+    print("         cat.talk()")
+
+    print("         lion = library.Lion(name, age)")
+
+    print("         lion.speak()")
+
+    print("         lion.talk()")
+
+    print("         snake = library.tiger(name, age)")
+
+    print("         snake.speak()")
+
+    print("         snake.talk()")
+
+    print("         whip = car(make, model, year, condition, kms)")
+
+    print("         whip.display()")
+
+    print("         whip.display(True)")
+
+    print("         whip.display(False)")
+
+    print("         newPerson = library.person('personname', age)")
+
+    print("         print(newPerson.execute_storage())")
+
+    print("         print(newPerson.isAdult())")
+
+    print("         print(newPerson.display())")
+
+class Dog(object):
+
+    def add_weight(self, weight):
+
+        self.weight = weight
+
+    def __init__(self, name, age):
+
+        self.name = name
+
+        self.age = age
+
         self.li = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32,
                    33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57,
                    58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 77, 78, 78, 79, 79,
@@ -71,15 +183,10 @@ class Cat(Dog):
         # time = 2:57:08 / 6:21:12
 
 
-class Lion(object):
+class Lion(Dog):
     # TODO: Lion class
     def __init__(self, name, age):
-        self.name = name
-        self.age = age
-        self.li = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32,
-                   33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57,
-                   58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 77, 78, 78, 79, 79,
-                   80, 81, 81, 82, 83, 83, 84, 85, 85, 86, 86, 87, 87, 88, 88, 89, 90, ]
+        super().__init__(name, age)
 
     def talk(self):
         print("kkkk!")
@@ -87,18 +194,10 @@ class Lion(object):
     def speak(self):
         print("Hi i am", self.name, "and i am", self.age, "years old and i am a Lion i will eat every animal")
 
-    def talk(self):
-        print("Bark!")
 
-
-class snake(object):
+class snake(Dog):
     def __init__(self, name, age):
-        self.name = name
-        self.age = age
-        self.li = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27,
-                   28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52,
-                   53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77,
-                   77, 78, 78, 79, 79, 80, 81, 81, 82, 83, 83, 84, 85, 85, 86, 86, 87, 87, 88, 88, 89, 90, ]
+        super().__init__(name, age)
 
     def speak(self):
         print("sss Hi i am", self.name, "and i am", self.age, "years old and i am a snake")
@@ -109,13 +208,15 @@ class snake(object):
 
 class tiger(Dog):
     def __init__(self, name, age):
+
         super().__init__(name, age)
-        self.data = [name]
 
     def talk(self):
+
         print("KKKKKKKKKK!")
 
     def speak(self):
+
         print("Hi i am", self.name, "and i am", self.age, "years old and i am a tiger and i will also eat every animal")
 
 
@@ -196,8 +297,7 @@ class Lib(object):
             for _ in range(n):
                 print("Bark!")
 
-
-class car(object):
+class Car(object):
     def __init__(self, make, model, year, condition, kms):
         self.make = make
         self.model = model
@@ -205,13 +305,11 @@ class car(object):
         self.condition = condition
         self.kms = kms
 
-    def display(self, showAll):
+    def display(self,
+                showAll
+               ):
         if showAll:
             print("this car %s %s from %s, it is  %s and has %s ths." % (
             self.make, self.model, self.year, self.condition, self.kms))
         else:
             print("this car is a %s %s from %s." % (self.make, self.model, self.year))
-
-
-whip = car("fsjhfs", "adafd", 5353, "ndjsagy", 0)
-whip.display(True)
